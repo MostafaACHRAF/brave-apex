@@ -1,0 +1,30 @@
+<apex:page controller="ClientPlanController" renderAs="pdf" action="{!init}">
+    👋 Hello Mostafa ❤️
+    
+    AccountId: {!accountId}
+    AccountName: {!accountName}
+
+    <apex:includeLightning />
+    <div id="lightning" />
+    <script>
+        $Lightning.use("c:mapAuraApp", function() {
+          $Lightning.createComponent("lightning:button",
+              { label : "Press Me!" },
+              "lightning",
+              function(cmp) {
+                console.log("button was created");
+                // do some stuff
+              }
+          );
+          
+          $Lightning.createComponent("c:bedrockHeadquartersMap",
+              { zoomlevel : 15},
+              "lightning",
+              function(cmp) {
+                console.log("map was created");
+                // do some stuff
+              }
+          );
+        });
+    </script>
+</apex:page>
