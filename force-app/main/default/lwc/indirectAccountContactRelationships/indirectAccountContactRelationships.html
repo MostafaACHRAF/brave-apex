@@ -1,0 +1,39 @@
+<template>
+  <div class="slds-text-heading_medium">Account Contact Relationships</div>
+  <table
+    class="slds-table slds-table_cell-buffer slds-table_bordered"
+    aria-labelledby="element-with-table-label other-element-with-table-label"
+  >
+    <thead>
+      <tr class="slds-line-height_reset">
+        <th class="" scope="col">
+          <div class="slds-truncate" title="Contact Name">Contact Name</div>
+        </th>
+        <th class="" scope="col">
+          <div class="slds-truncate" title="Account Name">Account Name</div>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr
+        class="slds-hint-parent"
+        for:each={accountContactRelations}
+        for:item="record"
+        key={record.cid}
+      >
+        <td data-label="Contact Name">
+          <div class="slds-truncate" title={record.contactName}>
+            {record.contactName}
+          </div>
+        </td>
+
+        <td data-label="Account Name">
+          <div class="slds-truncate" title={record.accountName}>
+            {record.accountName}
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</template>
