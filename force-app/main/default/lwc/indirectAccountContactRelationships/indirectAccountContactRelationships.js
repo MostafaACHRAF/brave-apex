@@ -12,13 +12,14 @@ export default class IndirectAccountContactRelationships extends LightningElemen
   accountContactRelations;
 
   connectedCallback() {
-
-      getAccountContactRelationships({
-        numberOfRecords: this.numberOfItems
-      }).then(result => {
+    getAccountContactRelationships({
+      numberOfRecords: this.numberOfItems,
+      orderBy: this.sortBy
+    })
+      .then((result) => {
         this.accountContactRelations = result;
-      }).catch(err => console.error('fucking error', err));
-
+      })
+      .catch((err) => console.error("fucking error", err));
   }
 
   // async getAccountContactRelationRecords() {

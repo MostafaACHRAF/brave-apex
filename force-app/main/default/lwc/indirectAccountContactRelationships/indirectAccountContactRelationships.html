@@ -12,6 +12,11 @@
         <th class="" scope="col">
           <div class="slds-truncate" title="Account Name">Account Name</div>
         </th>
+        <th class="" scope="col">
+          <div class="slds-truncate" title="Nbr of Accounts">
+            Nbr of Accounts
+          </div>
+        </th>
       </tr>
     </thead>
 
@@ -31,6 +36,12 @@
         <td data-label="Account Name">
           <div class="slds-truncate" title={record.accountName}>
             {record.accountName}
+          </div>
+        </td>
+
+        <td data-label="Number of Accounts">
+          <div class="slds-truncate" title={record.nbrOfAccounts}>
+            {record.nbrOfAccounts}
           </div>
         </td>
       </tr>
